@@ -5,6 +5,10 @@ function App() {
   const [data, setData] = useState([]);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
+
+  useEffect(() => {
+    localStorage.data ? setData(JSON.parse(localStorage.data)) : setData([])
+  },[]);
   useEffect(() => {
     if (data.length) {
       save();
